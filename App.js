@@ -1,31 +1,11 @@
-import { useEffect, useState } from "react";
-import { StatusBar } from "expo-status-bar";
-import {
-  Button,
-  StyleSheet,
-  Switch,
-  Text,
-  TextInput,
-  View,
-  Image,
-} from "react-native";
-import * as ImagePicker from "expo-image-picker";
-import * as Permissions from "expo-permissions";
+import { useState } from "react";
 
-
+import ImageInputList from "./app/components/ImageInputList";
 import Screen from "./app/components/Screen";
-import ImageInput from "./app/components/ImageInput";
+import ListingsEditScreen from "./app/screens/ListingsEditScreen";
 
 export default function App() {
-  const [imageUri, setImageUri] = useState();
+  
 
-
-
-
-
-  return (
-    <Screen>
-      <ImageInput imageUri={imageUri} onChangeImage={(uri) => setImageUri(uri)}/>
-    </Screen>
-  );
+  return <ListingsEditScreen />;
 }
