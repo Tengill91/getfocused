@@ -10,13 +10,13 @@ const initialMessages = [
   {
     id: 1,
     title: "T1",
-    description: "d1",
+    description: "Hello how are you?",
     image: require("../assets/icon.png"),
   },
   {
     id: 2,
     title: "T2",
-    description: "d2",
+    description: " Hi is the item still available! or else i will grrrrrawr",
     image: require("../assets/icon.png"),
   },
 ];
@@ -36,7 +36,7 @@ export default function MessagesScreen(props) {
         renderItem={({ item }) => (
           <ListItem
             title={item.title}
-            subTitle={item.subTitle}
+            subTitle={item.description}
             image={item.image}
             onPress={() => console.log("message selected", item)}
             renderRightActions={() => (

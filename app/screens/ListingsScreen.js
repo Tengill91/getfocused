@@ -3,6 +3,7 @@ import { FlatList, View, StyleSheet } from "react-native";
 
 import Card from "../components/Card";
 import Screen from "../components/Screen";
+import routes from "../navigation/routes";
 import colors from "../config/colors";
 
 const listings = [
@@ -19,18 +20,19 @@ const listings = [
     image: require("../assets/icon.png"),
   },
 ];
-
-export default function ListingsScreen() {
+// we can reach the "navigation" prop becouse this screen is added in the navigator in feed navigator
+export default function ListingsScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <FlatList
         data={listings}
-        keyExtractor={(listing) => listing.id.toString}
+        keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
           <Card
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
       />
