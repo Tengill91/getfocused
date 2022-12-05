@@ -10,9 +10,9 @@ import NewListingButton from "./NewListingButton";
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
-  <Tab.Navigator>
+  <Tab.Navigator screenOptions={{headerShown:false}}>
     <Tab.Screen
-      name="Feed"
+      name="FeedNav"
       options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -39,7 +39,7 @@ const AppNavigator = () => (
       })}
     />
     <Tab.Screen
-      name="Account"
+      name="AccountNav"
       component={AccountNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (

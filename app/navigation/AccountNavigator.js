@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 
 const AccountNavigator = () => (
   // presentation = screen pop in animation
-  <Stack.Navigator>
+  <Stack.Navigator screenOptions={{headerShown:false}}>
     <Stack.Screen name="Account" component={AccountScreen} />
     <Stack.Screen name="Messages" component={MessagesScreen} />
   </Stack.Navigator>
